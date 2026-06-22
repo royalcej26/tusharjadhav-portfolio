@@ -1,35 +1,47 @@
 (function () {
 
-  // ── SHOW ALL REVEAL ELEMENTS IMMEDIATELY ──
-  // Then animate them in with a stagger
+  // ── SCROLL REVEAL FOR CARDS ──
   var revealEls = document.querySelectorAll('.reveal');
-  revealEls.forEach(function (el, i) {
-    setTimeout(function () {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }, i * 150);
-  });
+
+  function checkReveal() {
+    revealEls.forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkReveal);
+  window.addEventListener('load', checkReveal);
+  checkReveal();
 
   // ── NUMBER COUNTUP ──
   function countUp(el) {
     var target = parseInt(el.getAttribute('data-target'), 10);
-    var duration = 1500;
-    var steps = 50;
-    var stepTime = duration / steps;
-    var current = 0;
-    el.textContent = '0';
-    var timer = setInterval(function () {
-      current += Math.ceil(target / steps);
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
+    var duration = 2000;
+    var startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = timestamp - startTime;
+      var percentage = Math.min(progress / duration, 1);
+      // Ease out — starts fast, slows at end
+      var eased = 1 - Math.pow(1 - percentage, 3);
+      var current = Math.floor(eased * target);
       el.textContent = current;
-    }, stepTime);
+      if (percentage < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target;
+      }
+    }
+
+    requestAnimationFrame(step);
   }
 
-  // Run countup when stats section is visible
   var statsTriggered = false;
+
   function checkStats() {
     if (statsTriggered) return;
     var statsRow = document.querySelector('.stats-row');
