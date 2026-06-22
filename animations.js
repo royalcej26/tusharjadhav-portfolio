@@ -40,6 +40,22 @@
     requestAnimationFrame(step);
   }
 
+  function countUp(el, startTime, timestamp) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var duration = 2000;
+    var progress = timestamp - startTime;
+    var percentage = Math.min(progress / duration, 1);
+    var eased = 1 - Math.pow(1 - percentage, 3);
+    el.textContent = Math.floor(eased * target);
+    if (percentage < 1) {
+      requestAnimationFrame(function (ts) {
+        countUp(el, startTime, ts);
+      });
+    } else {
+      el.textContent = target;
+    }
+  }
+
   var statsTriggered = false;
 
   function checkStats() {
@@ -49,8 +65,12 @@
     var rect = statsRow.getBoundingClientRect();
     if (rect.top < window.innerHeight - 50) {
       statsTriggered = true;
-      document.querySelectorAll('.stat-number[data-target]').forEach(function (el) {
-        countUp(el);
+      // All three start at exactly the same timestamp
+      requestAnimationFrame(function (startTimestamp) {
+        document.querySelectorAll('.stat-number[data-target]').forEach(function (el) {
+          el.textContent = '0';
+          countUp(el, startTimestamp, startTimestamp);
+        });
       });
     }
   }
