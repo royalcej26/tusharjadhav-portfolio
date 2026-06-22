@@ -1,0 +1,110 @@
+/* ============================================
+   BASE.CSS — Design Tokens & Reset
+   All colors, fonts, and spacing live here.
+   Every other file references these variables.
+============================================ */
+
+/* --- Google Fonts Import --- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* --- Design Tokens --- */
+:root {
+  /* Colors */
+  --bg: #0a0a0b;
+  --surface: #111114;
+  --border: #1e1e24;
+  --text: #e8e8f0;
+  --muted: #6b6b7a;
+  --accent: #3b6fff;
+  --accent-dim: #1a3580;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Type Scale */
+  --text-xs: 0.75rem; /* 12px — labels */
+  --text-sm: 0.875rem; /* 14px — meta, tags */
+  --text-base: 1rem; /* 16px — body */
+  --text-lg: 1.125rem; /* 18px — lead text */
+  --text-xl: 1.5rem; /* 24px — section titles */
+  --text-2xl: 2rem; /* 32px — name/hero */
+  --text-3xl: 3rem; /* 48px — big stat numbers */
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --space-xl: 6rem;
+
+  /* Layout */
+  --max-width: 680px;
+  --radius: 6px;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Base Elements --- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Utility Classes --- */
+.mono {
+  font-family: var(--font-mono);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

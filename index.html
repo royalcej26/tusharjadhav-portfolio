@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tushar Jadhav — Market Access Analysis, HEOR & Regulatory Intelligence"
+    />
+    <title>Tushar Jadhav — Healthcare Analyst</title>
+
+    <!-- Stylesheets — load order matters -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/cursor.css" />
+  </head>
+
+  <body>
+    <!-- CURSOR (custom dot — controlled by cursor.js) -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- ═══════════════════════════════════════
+         NAV
+    ═══════════════════════════════════════ -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <span class="nav-logo mono">TJ</span>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <header class="hero" id="top">
+      <div class="container">
+        <p class="hero-eyebrow mono">B.Pharm · Market Access · HEOR</p>
+        <h1 class="hero-name">Tushar Jadhav</h1>
+        <p class="hero-tagline">
+          While most analysts model the market,<br />
+          I understand the molecule.
+        </p>
+        <div class="hero-links">
+          <a href="#work" class="btn-primary">View Case Studies</a>
+          <a
+            href="https://www.linkedin.com/in/tusharjadhav26"
+            target="_blank"
+            class="btn-ghost"
+            >LinkedIn ↗</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════ -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section-label mono">About</p>
+        <h2 class="section-title">
+          Pharmacy meets<br /><em>strategic thinking</em>
+        </h2>
+        <p class="section-body">
+          I'm a third-year B.Pharm student at Dr. BAMU building at the
+          intersection of pharmaceutical science and commercial strategy. My
+          work focuses on HTA, HEOR, and market access — areas where most
+          analysts lack the scientific foundation, and most pharmacists lack the
+          business framing.
+        </p>
+        <p class="section-body">
+          REAT, my regulatory intelligence platform for Indian pharma
+          manufacturers, is currently in development.
+        </p>
+
+        <!-- Animated Stats -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-number mono" data-target="4">0</span>
+            <span class="stat-label">Case Studies</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number mono" data-target="1">0</span>
+            <span class="stat-label">SaaS in Dev</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number mono" data-target="3">0</span>
+            <span class="stat-label">Year B.Pharm</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         WORK
+    ═══════════════════════════════════════ -->
+    <section class="section" id="work">
+      <div class="container">
+        <p class="section-label mono">Work</p>
+        <h2 class="section-title">
+          Analytical work on<br /><em>real market events</em>
+        </h2>
+
+        <!-- Project Card 1 -->
+        <article class="project-card reveal">
+          <div class="project-meta">
+            <span class="project-type mono">Budget Impact Model</span>
+            <span class="project-year mono muted">2024</span>
+          </div>
+          <h3 class="project-title">Keytruda Market Access Strategy</h3>
+          <p class="project-desc">
+            7-stage patient funnel from 173,487 eligible Indian NSCLC patients
+            down to fewer than 200 reaching treatment. Identified affordability
+            — not diagnosis — as the primary bottleneck. PMJAY ₹5L ceiling vs
+            ₹34L annual cost.
+          </p>
+          <!-- Key finding — this number animates -->
+          <div class="project-finding">
+            <span class="finding-number mono accent" data-target-text="&lt;0.3%"
+              >&lt;0.3%</span
+            >
+            <span class="finding-label muted">effective access rate</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Market Access</span>
+            <span class="tag">HEOR</span>
+            <span class="tag">Patient Funnel</span>
+            <span class="tag">India</span>
+          </div>
+          <a
+            href="https://tusharjadhav.vercel.app"
+            target="_blank"
+            class="project-link"
+          >
+            View Dashboard ↗
+          </a>
+        </article>
+
+        <!-- Project Card 2 -->
+        <article class="project-card reveal">
+          <div class="project-meta">
+            <span class="project-type mono">Cost-Effectiveness Analysis</span>
+            <span class="project-year mono muted">2024</span>
+          </div>
+          <h3 class="project-title">
+            Tirzepatide vs Semaglutide — Type 2 Diabetes CEA
+          </h3>
+          <p class="project-desc">
+            NICE/IQVIA-grade Markov model comparing tirzepatide and semaglutide
+            for T2D. Built in R using UKPDS Outcomes Model transition
+            probability coefficients (Hayes et al. 2013). Modeled on real HTA
+            submission methodology.
+          </p>
+          <div class="project-tags">
+            <span class="tag">CEA</span>
+            <span class="tag">Markov Model</span>
+            <span class="tag">R</span>
+            <span class="tag">NICE Framework</span>
+          </div>
+        </article>
+
+        <!-- Project Card 3 — REAT -->
+        <article class="project-card reveal">
+          <div class="project-meta">
+            <span class="project-type mono">SaaS · In Development</span>
+            <span class="project-year mono muted">2024–25</span>
+          </div>
+          <h3 class="project-title">REAT — Regulatory Intelligence Platform</h3>
+          <p class="project-desc">
+            B2B SaaS for Indian pharmaceutical manufacturers. Tracks CDSCO
+            submissions, flags regulatory gaps, and surfaces actionable
+            intelligence. Document Vault, Submission Tracker, and Action Log
+            modules complete.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Regulatory Affairs</span>
+            <span class="tag">B2B SaaS</span>
+            <span class="tag">India Pharma</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         SKILLS
+    ═══════════════════════════════════════ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="section-label mono">Skills</p>
+        <h2 class="section-title">Technical toolkit</h2>
+
+        <div class="skills-group">
+          <p class="skills-category mono muted">HEOR & HTA</p>
+          <div class="skills-pills">
+            <span class="pill">Markov Modeling</span>
+            <span class="pill">Budget Impact Models</span>
+            <span class="pill">Cost-Effectiveness Analysis</span>
+            <span class="pill">Sensitivity Analysis</span>
+            <span class="pill">QALY Estimation</span>
+            <span class="pill">NICE Methodology</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-category mono muted">Market Access</p>
+          <div class="skills-pills">
+            <span class="pill">Patient Funnel Analysis</span>
+            <span class="pill">Formulary Strategy</span>
+            <span class="pill">HTA Submissions</span>
+            <span class="pill">Payer Landscape</span>
+            <span class="pill">India Regulatory (CDSCO)</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-category mono muted">Tools & Methods</p>
+          <div class="skills-pills">
+            <span class="pill">R</span>
+            <span class="pill">Excel Modeling</span>
+            <span class="pill">Real World Evidence</span>
+            <span class="pill">Biostatistics</span>
+            <span class="pill">Epidemiology</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="section-label mono">Contact</p>
+        <h2 class="section-title">Let's work together</h2>
+        <p class="section-body">
+          Open to HEOR analyst roles, market access consulting internships, and
+          research collaborations. Based in Maharashtra, India.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:tushar@example.com" class="btn-primary">Email Me</a>
+          <a
+            href="https://www.linkedin.com/in/tusharjadhav26"
+            target="_blank"
+            class="btn-ghost"
+            >LinkedIn ↗</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <span class="mono muted">Tushar Jadhav © 2025</span>
+        <span class="mono muted">Chhatrapati Sambhajinagar, India</span>
+      </div>
+    </footer>
+
+    <!-- Scripts — load after body -->
+    <script src="js/cursor.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/animations.js"></script>
+  </body>
+</html>
